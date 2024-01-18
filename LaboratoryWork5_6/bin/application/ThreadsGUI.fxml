@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="461.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ThreadsGUIController">
+   <children>
+      <BorderPane prefHeight="461.0" prefWidth="354.0">
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="318.0" prefWidth="68.0" style="-fx-border-color: yellow; -fx-border-width: 6;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Region prefHeight="200.0" prefWidth="200.0" style="-fx-border-width: 6;" />
+                        <Button mnemonicParsing="false" onAction="#handleOnStartA" text="StartA" />
+                        <Region prefHeight="200.0" prefWidth="200.0" />
+                        <Button mnemonicParsing="false" onAction="#handleOnStopA" text="StopA" />
+                        <Region prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="318.0" prefWidth="198.0">
+                     <children>
+                        <GridPane prefHeight="118.0" prefWidth="198.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.20001220703125" minWidth="10.0" prefWidth="87.8000244140625" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.19994735717773" minWidth="10.0" prefWidth="97.39997558593748" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="74.59998168945313" minHeight="10.0" prefHeight="33.20001220703125" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="74.59998168945313" minHeight="7.399998092651373" prefHeight="25.199999999999996" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="151.40000190734864" minHeight="7.5999816894531165" prefHeight="28.60000000000001" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="211.20002441406254" minHeight="10.0" prefHeight="32.599999999999994" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#handleChangeNameForB" prefHeight="65.0" prefWidth="133.0" text="Текст &quot;Б&quot;" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#handleChangeTimeForA" prefHeight="61.0" prefWidth="109.0" text="Время &quot;А&quot;" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" onAction="#handleChangeTimeForB" prefHeight="39.0" prefWidth="94.0" text="Время &quot;Б&quot;" GridPane.rowIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#handleChangeNameForA" prefHeight="123.0" prefWidth="188.0" text="Текст &quot;А&quot;" />
+                              <TextField fx:id="textforA" GridPane.columnIndex="1" />
+                              <TextField fx:id="textforB" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="timeforA" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="timeforB" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <FlowPane fx:id="flowsPane" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#handlecreateThreads" prefHeight="26.0" prefWidth="204.0" text="Открыть поток" />
+                              <TextField fx:id="textforthreads" prefHeight="26.0" prefWidth="104.0" promptText="Текст потока" />
+                              <TextField fx:id="timeforthreads" prefHeight="26.0" prefWidth="100.0" promptText="Время " />
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="318.0" prefWidth="77.0" style="-fx-border-color: yellow; -fx-border-width: 6;">
+                     <children>
+                        <Region prefHeight="200.0" prefWidth="200.0" />
+                        <Button mnemonicParsing="false" onAction="#handleOnStartB" text="StartB" />
+                        <Region prefHeight="200.0" prefWidth="200.0" />
+                        <Button mnemonicParsing="false" onAction="#handleOnStopB" text="StopB" />
+                        <Region prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </center>
+         <bottom>
+            <TextArea fx:id="textArea1" prefHeight="89.0" prefWidth="354.0" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
